@@ -26,7 +26,7 @@ export default function Home() {
           Sistema de Autenticação de Usuários
         </p>
         <div>
-          <LoginButton>
+          <LoginButton asChild>
             <Button size="lg" variant="secondary">
               Entrar
             </Button>
