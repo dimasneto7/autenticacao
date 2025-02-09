@@ -16,7 +16,7 @@ export const newPassword = async (
 
   const validatedFields = NewPasswordSchema.safeParse(values)
 
-  if (!validatedFields) {
+  if (!validatedFields.success) {
     return { error: 'Campos inválidos' }
   }
 
@@ -36,7 +36,7 @@ export const newPassword = async (
 
   const existingUser = await getUserByEmail(existingToken.email)
 
-  if (!existingToken) {
+  if (!existingUser) {
     return { error: 'Email não existe' }
   }
 
